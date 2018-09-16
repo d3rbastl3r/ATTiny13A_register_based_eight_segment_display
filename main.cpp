@@ -1,5 +1,6 @@
 /**
  * A minimal example how to display hexadecimal values on the eight segment display trough the 8Bit shift register
+ * The example code in the main routine shows the values 0 to 9 and A to F on the display.
  *
  * Port assignments for the Shift-Register
  * `-> SER:   PB0 // Port to transmit data
@@ -78,6 +79,7 @@ int main(void) {
 
     while(1) {
         for (uint8_t i=0; i<17; ++i) {
+            // Push the data to show 0 to 9 and A to F on the eight segment display
             pushByteAndLatch(eightSegmentDecoder[i]);
             _delay_ms(1000);
         }
